@@ -1,6 +1,8 @@
+import Header from "components/Header";
+
 function Start() {
     return (
-        <h1>Olá universo! Estou em uma nova galáxia.</h1>
+        <Header />
     );
 }
 
