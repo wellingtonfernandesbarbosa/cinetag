@@ -1,0 +1,27 @@
+.container {
+  padding: 0 0 1em 0;
+  margin-top: 0.5em;
+  width: 252px;
+  background-color: var(--cinza);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover {
+  width: 100%;
+}
+
+.container h2,
+.favorite {
+  padding: 0 1em;
+}
+
+.container h2 {
+  font-size: 18px;
+  padding-bottom: 0.7em;
+}
+
+.favorite {
+  width: 24px;
+}

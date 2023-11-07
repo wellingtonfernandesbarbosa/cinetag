@@ -1,8 +1,5 @@
 .footer {
   background-color: var(--preto);
-  align-items: center;
-  display: flex;
-  justify-content: center;
   padding: 33px 0px;
 }
 
@@ -10,4 +7,5 @@
   color: var(--branco);
   font-size: 18px;
   font-weight: 400;
+  text-align: center;
 }
