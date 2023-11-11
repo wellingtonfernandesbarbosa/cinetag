@@ -2,7 +2,7 @@ import styles from "./Start.module.css";
 import Banner from "components/Banner";
 import Title from "components/Title";
 import Card from "components/Card";
-import videos from "json/db.json";
+import movies from "json/db.json";
 import Container from "components/Container";
 
 function Start() {
@@ -14,8 +14,8 @@ function Start() {
       </Title>
       <Container>
         <section className={styles.container}>
-          {videos.map((video) => {
-            return <Card {...video} key={video.id} />;
+          {movies.map((movie) => {
+            return <Card {...movie} key={movie.id} />;
           })}
         </section>
       </Container>

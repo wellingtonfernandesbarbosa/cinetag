@@ -24,4 +24,5 @@
 
 .favorite {
   width: 24px;
+  cursor: pointer;
 }
