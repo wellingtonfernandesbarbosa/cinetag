@@ -11,7 +11,7 @@ function Header() {
       </Link>
       <nav>
         <HeaderLink url="./">Home</HeaderLink>
-        <HeaderLink url="./Favorites">Favoritos</HeaderLink>
+        <HeaderLink url="./favorites">Favoritos</HeaderLink>
       </nav>
     </header>
   );

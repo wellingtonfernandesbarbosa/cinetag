@@ -4,13 +4,18 @@ import Banner from "components/Banner";
 import Title from "components/Title";
 import movies from "json/db.json";
 import { useParams } from "react-router-dom";
+import NotFound from "pages/NotFound";
 
 function Player() {
   const params = useParams();
   const movie = movies.find((movie) => {
     return movie.id === Number(params.id);
   });
-  console.log(movie);
+  
+  if (!movie) {
+    return <NotFound />
+  }
+
   return (
     <>
       <Banner image="player" />
@@ -24,7 +29,7 @@ function Player() {
             height="100%"
             src={movie.link}
             title={movie.title}
-            frameborder="0"
+            frameorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
