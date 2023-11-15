@@ -1,19 +1,29 @@
-import Container from "components/Container";
+import { useParams } from "react-router-dom";
+
 import styles from "./Player.module.css";
 import Banner from "components/Banner";
 import Title from "components/Title";
-import movies from "json/db.json";
-import { useParams } from "react-router-dom";
+import Container from "components/Container";
 import NotFound from "pages/NotFound";
+import { useEffect, useState } from "react";
 
 function Player() {
   const params = useParams();
-  const movie = movies.find((movie) => {
-    return movie.id === Number(params.id);
-  });
-  
+
+  const [movie, setMovie] = useState();
+
+  useEffect(() => {
+    fetch(
+      `https://my-json-server.typicode.com/wellingtonfernandesbarbosa/cinetag-api/movies?id=${params.id}`
+    )
+      .then((response) => response.json())
+      .then(data => {
+        setMovie(...data);
+      });
+  }, [params.id]);
+
   if (!movie) {
-    return <NotFound />
+    return <NotFound />;
   }
 
   return (
@@ -31,7 +41,7 @@ function Player() {
             title={movie.title}
             frameorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </section>
       </Container>

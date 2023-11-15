@@ -2,3 +2,9 @@
   margin: 2em 9em;
   text-align: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .container section {
+    margin: 2em 5em;
+  }
+}

@@ -7,7 +7,6 @@ import { useFavoriteContext } from "Contexts/Favorites";
 
 const Favorites = () => {
   const { favorite } = useFavoriteContext();
-  console.log(favorite);
 
   return (
     <>

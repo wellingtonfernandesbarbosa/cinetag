@@ -2,9 +2,21 @@ import styles from "./Start.module.css";
 import Banner from "components/Banner";
 import Title from "components/Title";
 import Card from "components/Card";
-import movies from "json/db.json";
+import { useEffect, useState } from "react";
 
 function Start() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://my-json-server.typicode.com/wellingtonfernandesbarbosa/cinetag-api/movies"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data);
+      });
+  }, []);
+
   return (
     <>
       <Banner image="home" />
